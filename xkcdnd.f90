@@ -7,13 +7,16 @@ program xkcdnd
   integer :: k
   integer :: n
   integer :: p
+  integer :: q
 
   p = 0
+  q = 0
 
   do i = 1,6
      do j = 1,6
         do k = 1,6
            do n = 1,4
+              q = q + 1
               if (i + j + k + n >= 16) then
                  p = p + 1
               end if
@@ -22,5 +25,6 @@ program xkcdnd
      end do
   end do
 
-  print *, p
+  print *, p, '/', q
+  
 end program xkcdnd
